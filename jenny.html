@@ -1,0 +1,345 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="uft-8"/>
+	<title>Girl & Boy</title>
+	<style type="text/css">
+	html{width: 100%; height: 100%; margin: 0; padding: 0}
+	body{width: 100%; height: 100%; margin: 0; padding: 0; background-color: #f0f0f0;}
+	
+	.gb{position: absolute; left:50%; top:0; width: 150px; height: 300px;}
+	.gb span{display:inline-block; position: absolute; margin:0; height: 0;}
+
+	.gb .head-wrap{position: relative; z-index:2; width: 100%; height: 60%;}
+	.gb .head{position: relative; width: 100%; height: 100%;}
+	.gb .t-hair{left: 20%; width:60%; height: 50%; border-radius: 100%; background-color: #623717;}
+	.gb .face{top:30%; text-align: left; background-color: #fff; border-radius: 100%; width: 100%; height: 70%; border: 1px #d0d0d0 solid;}
+	.gb .l-hair{z-index:1; left:-5%; top:-5%; width: 56%; height: 66%; border-radius: 100% 0%; background-color: #623717;}
+	.gb .r-hair{z-index:1; right:-5%; top:-5%; width: 56%; height: 66%; border-radius: 0 100%; background-color: #623717;}
+	.gb .l-hair2{z-index:1; left:20%; top:6%; width: 40%; height: 50%; border-radius: 100% 0%; background-color: #623717;}
+	.gb .r-hair2{z-index:1; right: 20%; top:6%; width: 40%; height: 50%; border-radius: 0 100%; background-color: #623717;}
+	.gb .forehead{left:2%; top: 53%; background-color: #fff; width: 96%; height: 11%;}
+	.gb .l-eye1{left:10%; top: 62%; border: 3px #000 solid; border-radius: 100%; width: 2%; height: 2%}
+	.gb .l-eye2{left:14%; top: 55%; border: 3px #000 solid; border-radius: 100%; width: 15%; height: 15%}
+	.gb .r-eye1{right:10%; top: 62%; border: 3px #000 solid; border-radius: 100%; width: 2%; height: 2%}
+	.gb .r-eye2{right:14%; top: 55%; border: 3px #000 solid; border-radius: 100%; width: 15%; height: 15%}
+	.gb .nose{left:48%; top: 53%; border: 3px #000 solid; border-radius: 0 0 32% 32%; width: 4%; height: 15%}
+	.gb .l-cheek{left:20%; top: 75%; background-color: #D63920; border-radius:100%; width: 10%; height: 10%}
+	.gb .r-cheek{right:20%; top: 75%; background-color: #D63920; border-radius:100%; width: 10%; height: 10%}
+	.gb .m-mouse{left:45%; top: 68%; width: 15%; height: 6%; background-color: #fff;}
+	.gb .mouse{left:45%; top: 68%; border: 3px #000 solid; border-radius: 100%; width: 10%; height: 10%}
+	.gb .l-ear{top: 60%; left:-5%; width: 10%; height: 10%; border-radius: 100%; border: 1px #d0d0d0 solid; background-color: #fff;}
+	.gb .r-ear{top: 60%; right:-5%; width: 10%; height: 10%; border-radius: 100%; border: 1px #d0d0d0 solid; background-color: #fff;}
+	
+	.gb .body-wrap{position: relative; z-index:1; width: 60%; height: 25%; left:20%; top:-2%; text-align: left;}
+	.gb .body{position: relative; z-index:1; width: 100%; height: 100%;}
+	.gb .arm{width: 100%; height: 80%; border-radius: 15%; border: 1px #d0d0d0 solid; background-color: #fff;}
+	.gb .cloth{left:15%; width: 70%; height: 95%; background-color: #D53920;}
+	.gb .collar{left:40%; width: 20%; height: 20%; border-radius: 100%; background-color: #fff;}
+	.gb .stripe1{left:15%; top: 50%; width: 35%; height: 5%; border-radius: 100%; background-color: #fff;}
+	.gb .stripe2{right:15%; top: 50%; width: 35%; height: 5%; border-radius: 100%; background-color: #fff;}
+	.gb .l-skirt{left:15%; top: 90%; width: 35%; height: 10%; border-radius: 100%; background-color: #D53920;}
+	.gb .r-skirt{right:15%; top: 90%; width: 35%; height: 10%; border-radius: 100%; background-color: #D53920;}
+	
+	.gb .leg-wrap{position: relative; width: 100%; height: 15%; top:-4%;}
+	.gb .leg{position: relative; width: 100%; height: 100%;}
+	.gb .l-leg{left:35%; width: 12%; height: 100%; border: 1px #d0d0d0 solid; background-color: #fff;}
+	.gb .l-sock{width: 100%; height: 5%; top:80%; background-color: #333;}
+	.gb .l-shoe{width: 100%; height: 40%; top:80%; border-radius: 100%; background-color: #333;}
+	.gb .l-sock2{width: 100%; height: 15%; top:85%; background-color: #fff;}
+	.gb .r-leg{right:35%; width: 12%; height: 100%; border: 1px #d0d0d0 solid; background-color: #fff;}
+	.gb .r-sock{width: 100%; height: 5%; top:80%; background-color: #333; }
+	.gb .r-shoe{width: 100%; height: 40%; top:80%; border-radius: 100%; background-color: #333;}
+	.gb .r-sock2{width: 100%; height: 15%; top:85%; background-color: #fff;}
+
+		.house{width: 100%; height: 100%; position: relative; perspective: 1500px;}
+		.room{width: 100%; height: 100%;  position: absolute; transform-style: preserve-3d;}
+
+		.l-leg-move{
+			transition:All 1s ease;
+			-webkit-transition:All 1s ease;
+			transform: rotate(45deg) translate(-15px);
+			-webkit-transform: translate(-10px) rotate(45deg) translate(-15px);
+		}
+		.r-leg-move{
+			transition:All 1s ease;
+			-webkit-transition:All 1s ease;
+			transform: rotate(-45deg) translate(-15px);
+			-webkit-transform: translate(10px) rotate(-45deg) translate(15px);
+		}
+		
+		.l-walk-back{
+			transition:All 1s ease;
+			-webkit-transition:All 1s ease;
+			transform: rotate(3deg) translate(0, -15px);
+			-webkit-transform: rotate(3deg) translate(0, -15px);
+		}
+		.r-walk-back{
+			transition:All 1s ease;
+			-webkit-transition:All 1s ease;
+			transform: rotate(-3deg) translate(0, -15px);
+			-webkit-transform: rotate(-3deg) translate(0, -15px);
+		}
+		.r-walk-front{
+			transition:All 1s ease;
+			-webkit-transition:All 1s ease;
+			transform: rotate(-1deg);
+			-webkit-transform: rotate(-1deg);
+		}
+		.l-walk-front{
+			transition:All 1s ease;
+			-webkit-transition:All 1s ease;
+			transform: rotate(1deg);
+			-webkit-transform: rotate(1deg);
+		}
+		
+	</style>
+</head>
+
+<body>
+
+	<div class="house">
+		<div class="room">
+
+			<div class="gb">
+				<span class="head-wrap">
+					<span class="head">
+						<span class="t-hair"></span>
+						<span class="l-ear"></span>
+						<span class="r-ear"></span>
+						<span class="face">
+							<span class="hair"></span>
+							<span class="l-hair"></span>
+							<span class="r-hair"></span>
+							<span class="l-hair2"></span>
+							<span class="r-hair2"></span>
+							<span class="l-eye1"></span><span class="l-eye2"></span>
+							<span class="r-eye2"></span><span class="r-eye1"></span>
+							<span class="l-cheek"></span>
+							<span class="mouse"></span>
+							<span class="m-mouse"></span>
+							<span class="nose"></span>
+							<span class="r-cheek"></span>
+							<span class="forehead"></span>
+						</span>
+					</span>
+				</span>
+				<span class="body-wrap">
+					<span class="body">
+						<span class="arm"></span>
+						<span class="cloth"></span>
+						<span class="collar"></span>
+						<span class="stripe1"></span>
+						<span class="stripe2"></span>
+						<span class="l-skirt"></span>
+						<span class="r-skirt"></span>
+					</span>
+				</span>
+				<span class="leg-wrap">
+					<span class="leg">
+						<span class="l-leg">
+							<span class="l-sock"></span>
+							<span class="l-shoe"></span>
+							<span class="l-sock2"></span>
+						</span>
+						<span class="r-leg">
+							<span class="r-sock"></span>
+							<span class="r-shoe"></span>
+							<span class="r-sock2"></span>
+						</span>
+					</span>
+				</span>
+			</div>
+			
+			
+			<button class="demoi">行走</buton>
+
+		</div>
+	</div>
+
+
+<script type="text/javascript">
+
+	var $ =(function (selector){
+		function G(css){
+			var self = this; 
+			var elements = [], events={};
+			if(document.querySelector){
+				var eles = document.querySelector(css);
+				var type = Object.prototype.toString.call(eles);
+				if(type == '[object Array]'){
+					elements.concat(eles);
+				}else{
+					elements.push(eles);
+				}
+			}else{
+				return;
+			}
+
+			var _dom = {
+				_elements: elements,
+				each: function(arr, func){
+					if(arr){
+						for(var i=0, ii=arr.length; i<ii; i++){
+							func(i, arr[i]);
+						}
+					}
+				},
+				addClass: function(classname){
+					var me = this;
+					me.each(me._elements, function(i, item){
+						var cn = self.trim(item.className);
+						if(cn.indexOf(classname) == -1){
+							item.className += ' '+ classname;
+						}
+					});
+					return me;
+				},
+				removeClass: function(classname){
+					var me = this;
+					me.each(me._elements, function(i, item){
+						var cn = item.className;
+						item.className = self.trim(cn.replace(classname, ''));
+					});
+					return me;
+				},
+				css: function(key, value){
+					var me = this;
+					if(key && value != undefined){
+						me.each(me._elements, function(i, item){
+							item.style[key] = value;
+						});
+						return me;
+					}else if(key){
+						if(me._elements){
+							var ele = me._elements[0];
+							if(ele.currentStyle){
+								ele.currentStyle[key];
+							}else if(window.getComputedStyle){
+								return window.getComputedStyle(ele , null)[key];
+							}
+						}
+					}
+				},
+				top: function(value){
+					var me = this;
+					if(value != undefined){
+						me.css('top', value+'px');
+					}else{
+						return parseInt(me.css('top').slice(0, -2));
+					}
+				},
+				left: function(value){
+					var me = this;
+					if(value != undefined){
+						me.css('left', value+'px');
+					}else{
+						return parseInt(me.css('left').slice(0, -2));
+					}
+				},
+				on: function(type, func){
+					var me = this;
+					events[type] = func;
+					this.each(this._elements, function(i, item){
+						if(item.addEventListener){
+							item.addEventListener(type, proxyHandler, false);
+						} else if (element.attachEvent){
+							item.attachEvent('on'+type, proxyHandler);
+						}
+					});
+
+					function proxyHandler(event){
+						event = event || window.event;
+						var eve = new _Event(event);
+						eve.type = event.type;
+						eve.target = event.target || event.srcElement;
+						eve.pageX = event.clientX || event.pageX;
+						eve.pageY = event.clientY || event.pageY;
+						eve.button = event.button&1?1:(event.button&2?3:(event.button&4?2:0));
+						events[type].call(me, eve);
+					}
+					return me;
+				},
+				fire: function(type, data){
+					this.each(this._elements, function(i, item){
+						if(item.fireEvent){
+							item.fireEvent(type, data);
+						}else if(item.dispatchEvent(event)){
+							item.dispatchEvent(type, data);
+						}
+					});
+				},
+				anim: function(){
+
+				}
+			};
+			return _dom;
+		}
+		
+		G.prototype.trim = function(str){
+			return str.replace(/(^\s*)|(\s*$)/g, '')
+		};
+
+		function _Event(eve){
+			this.eve = eve;
+		}
+		_Event.prototype.halt = function(){
+			var eve = this.eve;
+			if(eve.preventDefault){
+				eve.preventDefault();
+			} else {
+				eve.returnValue = false;
+			}
+			if(eve.stopPropogation){
+				eve.stopPropogation();
+			}else{
+				eve.cancelBubble = true;
+			}
+		};
+		return new G(selector);
+	});
+	
+	
+	function walk(){
+		var lleg = $('.l-leg'), rleg = $('.r-leg'), jenny = $('.gb');
+		function _walk(){
+			lleg.removeClass('l-walk-front');
+			rleg.removeClass('r-walk-back');
+			lleg.addClass('l-walk-back');
+			rleg.addClass('r-walk-front');
+			jenny.top(jenny.top()+2);
+			setTimeout(function(){
+				lleg.removeClass('l-walk-back');
+				rleg.removeClass('r-walk-front');
+				rleg.addClass('r-walk-back');
+				lleg.addClass('l-walk-front');
+				jenny.top(jenny.top()+2);
+				setTimeout(_walk, 1000);
+			}, 1000);
+		}
+		_walk();
+	}
+	
+	function stop(){
+		var lleg = $('.l-leg'), rleg = $('.r-leg');
+		lleg.removeClass('l-walk-back');
+		rleg.removeClass('r-walk-front');
+		lleg.removeClass('l-walk-front');
+		rleg.removeClass('r-walk-back');
+	}
+	
+	$('.demoi').on('click', function(e){
+		alert(get());
+		walk();
+	});
+	
+	function get(){
+		var o = {a: 'a', b: 'b'};
+		return o['a'];
+	}
+	
+</script>
+
+</body>
+</html>
+
